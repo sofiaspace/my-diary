@@ -16,17 +16,24 @@ export const HeaderContainer = styled.div`
   font-size: 6rem;
   text-align: center;
   animation: ${moveInTop} 2s ease-out;
+  padding: 0 1rem;
 
   @media ${device.lg} {
     font-size: 5rem;
-    margin: 4rem 4rem;
+    margin: 6rem 2.5rem;
   }
   @media ${device.md} {
     font-size: 4.5rem;
-    margin: 3rem 4rem;
+    margin: 2rem 2.5rem;
   }
   @media ${device.sm} {
-    font-size: 4rem;
-    margin: 3rem 2rem;
+    font-size: 3.5rem;
+    margin: 2rem 1rem;
+    padding: 0 1rem;
+  }
+  @media ${device.xs} {
+    font-size: 2.5rem;
+    margin: 1rem 0.5rem;
+    padding: 0 1rem;
   }
 `;

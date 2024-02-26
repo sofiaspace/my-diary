@@ -3,28 +3,28 @@ import { NavBarContainer, NavBarList, StyledNavLink } from "./NavBar.style";
 
 const NavBar: FC = () => {
   return (
-    <nav>
-      <NavBarContainer>
-        <NavBarList>
+    <NavBarContainer>
+      <NavBarList>
+        <li>
           <StyledNavLink to="/">HOME</StyledNavLink>
-        </NavBarList>
-        <NavBarList>
+        </li>
+        <li>
           <StyledNavLink to="/about">ABOUT</StyledNavLink>
-        </NavBarList>
-        <NavBarList>
+        </li>
+        <li>
           <StyledNavLink to="/calendar">CALENDAR</StyledNavLink>
-        </NavBarList>
-        <NavBarList>
+        </li>
+        <li>
           <StyledNavLink to="/todo">TO-DO</StyledNavLink>
-        </NavBarList>
-        <NavBarList>
+        </li>
+        <li>
           <StyledNavLink to="/diary">DIARY</StyledNavLink>
-        </NavBarList>
-        <NavBarList>
+        </li>
+        <li>
           <StyledNavLink to="/customize">CUSTOMIZE</StyledNavLink>
-        </NavBarList>
-      </NavBarContainer>
-    </nav>
+        </li>
+      </NavBarList>
+    </NavBarContainer>
   );
 };
 

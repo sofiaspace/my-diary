@@ -1,26 +1,31 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./components/HomePage/HomePage";
-import AboutPage from "./components/AboutPage/AboutPage";
-import CalendarPage from "./components/CalendarPage/CalendarPage";
-import DiaryPage from "./components/DiaryPage/DiaryPage";
-import CustomizePage from "./components/CustomizePage/CustomizePage";
-import TodoPage from "./components/TodoPage/TodoPage";
-import PageNotFound from "./components/PageNotFound/PageNotFound";
-import NavBar from "./components/HomePage/NavBar";
+import HomePage from "./pages/HomePage/HomePage";
+import AboutPage from "./pages/AboutPage/AboutPage";
+import CalendarPage from "./pages/CalendarPage/CalendarPage";
+import DiaryPage from "./pages/DiaryPage/DiaryPage";
+import CustomizePage from "./pages/CustomizePage/CustomizePage";
+import TodoPage from "./pages/TodoPage/TodoPage";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
+import NavBar from "./pages/HomePage/NavBar";
+import ReviewsPage from "./pages/ReviewsPage/ReviewsPage";
+import { StyledRoutes } from "./styles/App.style";
 
 function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <Routes>
-        <Route index element={<HomePage />} />
-        <Route path="about" element={<AboutPage />} />
-        <Route path="calendar" element={<CalendarPage />} />
-        <Route path="diary" element={<DiaryPage />} />
-        <Route path="customize" element={<CustomizePage />} />
-        <Route path="todo" element={<TodoPage />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
+      <StyledRoutes>
+        <Routes>
+          <Route index element={<HomePage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="calendar" element={<CalendarPage />} />
+          <Route path="diary" element={<DiaryPage />} />
+          <Route path="customize" element={<CustomizePage />} />
+          <Route path="todo" element={<TodoPage />} />
+          <Route path="reviews" element={<ReviewsPage />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </StyledRoutes>
     </BrowserRouter>
   );
 }
