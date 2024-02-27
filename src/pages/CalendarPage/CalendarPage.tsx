@@ -1,34 +1,25 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import "react-datepicker/dist/react-datepicker.css";
-import {
-  CalendarPageContainer,
-  MeetingsContainer,
-  StyledDatePicker,
-} from "./CalendarPage.style";
+// import NewMeetingComponent from "../../components/meetings/NewMeetingComponent";
+import { CalendarPageContainer, Options } from "./CalendarPage.style";
+import { Button } from "../../ui/Button";
+import { useNavigate } from "react-router-dom";
 
 interface CalendarPageProps {}
 
 const CalendarPage: FC<CalendarPageProps> = () => {
-  const [startDate, setStartDate] = useState(new Date());
+  const navigate = useNavigate();
 
   return (
     <CalendarPageContainer>
-      <StyledDatePicker
-        selected={startDate}
-        onChange={(date: Date) => setStartDate(date)}
-        showTimeSelect
-        timeFormat="HH:mm"
-        timeIntervals={15}
-        timeCaption="time"
-        dateFormat="MMMM d, yyyy h:mm aa"
-      />
-      <MeetingsContainer>
-        <p>
-          Pick up the date you have your meeting and add all the information
-          needed:
-        </p>
-        <></>
-      </MeetingsContainer>
+      <Options>
+        <Button onClick={() => navigate("/calendar/new")}>
+          Create new meeting
+        </Button>
+        <Button onClick={() => navigate("/calendar/scheduled")}>
+          Scheduled meetings
+        </Button>
+      </Options>
     </CalendarPageContainer>
   );
 };

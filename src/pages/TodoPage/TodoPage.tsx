@@ -4,8 +4,8 @@ import { TodoItem, TodoList, TodoPageContainer } from "./TodoPage.style";
 const TodoPage: FC = () => {
   const [value, setValue] = useState<string>("");
 
-  const sessionStorageList = window.sessionStorage.getItem("todo");
-  const todoList = sessionStorageList ? JSON.parse(sessionStorageList) : [];
+  const localStorageList = window.localStorage.getItem("todo");
+  const todoList = localStorageList ? JSON.parse(localStorageList) : [];
   const [list, setList] = useState<Array<string>>(todoList);
 
   const src = "circle-with-cross.svg";
@@ -16,7 +16,7 @@ const TodoPage: FC = () => {
     if (value === "") return;
     const newItem = [...list, value];
     setList(newItem);
-    window.sessionStorage.setItem("todo", JSON.stringify(newItem));
+    window.localStorage.setItem("todo", JSON.stringify(newItem));
     setValue("");
   };
 
@@ -24,7 +24,7 @@ const TodoPage: FC = () => {
     const updatedList = list.filter((d) => d !== item);
     setList(updatedList);
 
-    sessionStorage.setItem("todo", JSON.stringify(updatedList));
+    window.localStorage.setItem("todo", JSON.stringify(updatedList));
   };
 
   return (

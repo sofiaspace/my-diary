@@ -10,6 +10,7 @@ export const TodoPageContainer = styled.div`
   border-radius: 2rem;
   text-align: left;
   padding: 0.7rem 2rem;
+  align-self: center;
 
   input {
     border: none;
