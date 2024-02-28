@@ -6,13 +6,14 @@ export const NavBarContainer = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: end;
+  font-size: 1.2rem;
 `;
 
 export const NavBarList = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding-right: 1rem;
+  padding: 0 1rem;
   list-style: none;
   flex-wrap: wrap;
 

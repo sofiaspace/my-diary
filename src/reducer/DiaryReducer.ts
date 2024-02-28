@@ -1,15 +1,14 @@
 export const initialState: DiaryState = {
-  meeting: [],
-  location: [],
-  date: [],
-  supplies: [],
+  formData: { meeting: "", location: "", date: "", supplies: "" },
 };
 
 export interface DiaryState {
-  meeting: string[];
-  location: string[];
-  date: string[];
-  supplies: string[];
+  formData: {
+    meeting: string;
+    location: string;
+    date: string;
+    supplies: string;
+  };
 }
 export type DiaryAction =
   | { type: "meetingData"; payload: string }
@@ -20,13 +19,25 @@ export type DiaryAction =
 export const DiaryReduce = (state: DiaryState, action: DiaryAction) => {
   switch (action.type) {
     case "meetingData":
-      return { ...state, meeting: [...state.meeting, action.payload] };
+      return {
+        ...state,
+        formData: { ...state.formData, meeting: action.payload },
+      };
     case "locationData":
-      return { ...state, location: [...state.location, action.payload] };
+      return {
+        ...state,
+        formData: { ...state.formData, location: action.payload },
+      };
     case "dateData":
-      return { ...state, date: [...state.date, action.payload] };
+      return {
+        ...state,
+        formData: { ...state.formData, date: action.payload },
+      };
     case "suppliesData":
-      return { ...state, supplies: [...state.supplies, action.payload] };
+      return {
+        ...state,
+        formData: { ...state.formData, supplies: action.payload },
+      };
     default:
       throw new Error("Unknown Action");
   }

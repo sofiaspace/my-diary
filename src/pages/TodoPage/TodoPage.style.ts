@@ -9,13 +9,20 @@ export const TodoPageContainer = styled.div`
   box-shadow: 0 0 0.5rem #a6a6a6;
   border-radius: 2rem;
   text-align: left;
-  padding: 0.7rem 2rem;
+  padding: 1rem 3rem;
   align-self: center;
+  font-size: 1.3rem;
+  overflow: auto;
+  scrollbar-color: #a6a6a6;
+
+  ::-webkit-scrollbar {
+    border-radius: 2rem;
+  }
 
   input {
     border: none;
     font: inherit;
-    font-size: 0.5rem;
+    font-size: 1rem;
     background-color: inherit;
     border-bottom: 1px solid #686868;
     padding: 0.1rem;
@@ -23,9 +30,9 @@ export const TodoPageContainer = styled.div`
 
     &:focus-visible {
       outline: 2px solid #686868;
-      padding: 0.2rem;
+      padding: 0.4rem;
       border-radius: 2rem;
-      padding-right: 4rem;
+      padding-right: 6rem;
 
       @media ${device.sm} {
         padding-right: 3rem;
@@ -39,10 +46,10 @@ export const TodoPageContainer = styled.div`
 `;
 
 export const TodoList = styled.div`
-  padding-top: 0.6rem;
+  padding-top: 1.3rem;
   display: grid;
   grid-template-rows: auto;
-  grid-row-gap: 0.2rem;
+  grid-row-gap: 0.6rem;
 `;
 
 export const TodoItem = styled.li`

@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const ReviewsPageContainer = styled.div`
   background-color: rgba(247, 239, 230, 0.8);
   box-shadow: 0 0 0.5rem #a6a6a6;
-
-  padding: 1.5rem;
-  margin: 4rem;
+  padding: 2.5rem;
+  margin: 16rem;
   border-radius: 2rem;
+  font-size: 1.3rem;
 
   display: flex;
   flex-direction: column;
@@ -16,8 +16,8 @@ export const ReviewsPageContainer = styled.div`
 `;
 
 export const Img = styled.img`
-  max-height: 5rem;
-  max-width: 5rem;
+  max-height: 9rem;
+  max-width: 9rem;
   border-radius: 50%;
   border: 0.1rem solid #fff;
 `;
@@ -59,8 +59,8 @@ export const ButtonsContainer = styled.div`
   button {
     border-radius: 50%;
     border: 1px solid #686868;
-    width: 0.4rem;
-    height: 0.4rem;
+    width: 0.9rem;
+    height: 0.9rem;
     cursor: pointer;
 
     &:hover {

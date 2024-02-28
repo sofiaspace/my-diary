@@ -10,10 +10,10 @@ const moveInTop = keyframes`
 }`;
 
 export const HeaderContainer = styled.div`
-  margin: 6rem 5rem;
+  margin: 6rem 15rem;
   border: solid;
   font-family: "Ms Madi", cursive;
-  font-size: 6rem;
+  font-size: 10rem;
   text-align: center;
   animation: ${moveInTop} 2s ease-out;
   padding: 0 1rem;

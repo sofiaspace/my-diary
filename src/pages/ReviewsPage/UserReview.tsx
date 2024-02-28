@@ -24,7 +24,7 @@ const userReview: {
     name: "Angela Smith",
     img: "user-6.jpg",
     review:
-      "Great website. Helps organize my daily activities as well as numerous other uses. I Really love it!",
+      "Helps organize my daily activities as well as numerous other uses. Great website!",
   },
 ];
 

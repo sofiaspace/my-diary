@@ -5,12 +5,14 @@ export const AboutPageContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  font-size: 1.3rem;
 `;
 
 export const AboutPageText = styled.div`
   margin: 3.5rem 1rem;
-  padding: 1.5rem;
-  max-width: 20rem;
+  padding: 3rem;
+  max-width: 40rem;
   background-color: rgba(247, 239, 230, 0.8);
   box-shadow: 0 0 0.5rem #a6a6a6;
   border-radius: 2rem;
@@ -30,6 +32,7 @@ export const AboutPageText = styled.div`
     border-bottom: 1px solid currentColor;
     padding-bottom: 0.1rem;
     transition: all 0.2s;
+    font-size: 1rem;
 
     & span {
       margin-left: 0.2rem;

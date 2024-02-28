@@ -3,7 +3,7 @@ import MeetingDetails from "./MeetingDetails";
 import { NewMeetingContainer, StyledDatePicker } from "./Meetings.style";
 
 const NewMeetingComponent: FC = () => {
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState<Date>(new Date());
 
   const date =
     startDate.getDate() +

@@ -6,7 +6,7 @@ const TodoPage: FC = () => {
 
   const localStorageList = window.localStorage.getItem("todo");
   const todoList = localStorageList ? JSON.parse(localStorageList) : [];
-  const [list, setList] = useState<Array<string>>(todoList);
+  const [list, setList] = useState<Array<string> | []>(todoList);
 
   const src = "circle-with-cross.svg";
 

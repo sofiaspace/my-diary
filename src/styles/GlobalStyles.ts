@@ -35,7 +35,6 @@ export const GlobalStyles = styled.createGlobalStyle`
   :root {
     overflow: hidden;
     color: #303030;
-    font-size: 2rem;
 
     display: flex;
     flex-direction: column;
