@@ -9,8 +9,8 @@ import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import NavBar from "./pages/HomePage/NavBar";
 import ReviewsPage from "./pages/ReviewsPage/ReviewsPage";
 import { StyledRoutes } from "./styles/App.style";
-import NewMeetingComponent from "./components/meetings/NewMeetingComponent";
 import ScheduledMeetings from "./components/meetings/ScheduledMeetings";
+import MeetingDetails from "./components/meetings/MeetingDetails";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="calendar" element={<CalendarPage />} />
-          <Route path="calendar/new" element={<NewMeetingComponent />} />
+          <Route path="calendar/new" element={<MeetingDetails />} />
           <Route path="calendar/scheduled" element={<ScheduledMeetings />} />
           <Route path="diary" element={<DiaryPage />} />
           <Route path="customize" element={<CustomizePage />} />

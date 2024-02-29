@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import {
   ScheduledMeeting,
   ScheduledMeetingsContainer,
@@ -16,17 +16,18 @@ interface Meetings {
 const ScheduledMeetings: FC<ScheduledMeetingsProps> = () => {
   const formData = window.localStorage.getItem("formData");
   const scheduledMeetings = formData ? JSON.parse(formData) : [];
-  const [meetings, setMeetings] = useState<Meetings[]>([scheduledMeetings]);
+
+  const [meetings, setMeetings] = useState<Meetings[]>(scheduledMeetings);
 
   return (
     <ScheduledMeetingsContainer>
-      {meetings.map((m, i) => (
-        <>
-          <ScheduledMeeting key={i}>
-            <li>Meeting: {m.meeting}</li> <li>Date: {m.date}</li>
-            <li>Location: {m.location}</li> <li>Supplies: {m.supplies}</li>
-          </ScheduledMeeting>
-        </>
+      {meetings.map((meeting, i) => (
+        <ScheduledMeeting key={i}>
+          <li>Meeting: {meeting.meeting}</li>
+          <li>Date: {meeting.date}</li>
+          <li>Location: {meeting.location}</li>
+          <li>Supplies: {meeting.supplies}</li>
+        </ScheduledMeeting>
       ))}
     </ScheduledMeetingsContainer>
   );

@@ -4,7 +4,6 @@ import {
   PropsWithChildren,
   Reducer,
   createContext,
-  useEffect,
   useReducer,
 } from "react";
 import {
@@ -16,6 +15,7 @@ import {
 
 export interface Props {
   dispatch: Dispatch<DiaryAction>;
+  state: DiaryState;
 }
 
 export const DiaryContext = createContext<Props>({} as Props);
@@ -26,12 +26,13 @@ export const DiaryProvider: FC<PropsWithChildren> = ({ children }) => {
     initialState
   );
 
-  useEffect(() => {
-    localStorage.setItem("formData", JSON.stringify(state.formData));
-  }, [state.formData]);
+  // const onSubmit = () => {
+  //   localStorage.setItem("formData", JSON.stringify(state));
+  //   dispatch({ type: "submitData" });
+  // };
 
   return (
-    <DiaryContext.Provider value={{ ...state, dispatch }}>
+    <DiaryContext.Provider value={{ state, dispatch }}>
       {children}
     </DiaryContext.Provider>
   );

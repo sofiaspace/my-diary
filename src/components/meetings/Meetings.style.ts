@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import { device } from "../../styles/mediaBreakpoints";
 import ReactDatePicker from "react-datepicker";
+import { fontSizePrimary, lightGrey2, lightGrey3 } from "../variables";
 
 export const NewMeetingContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   max-width: 75%;
-  font-size: 1.3rem;
+  font-size: ${fontSizePrimary};
   align-self: center;
 
   @media ${device.sm} {
@@ -35,12 +36,15 @@ export const StyledDatePicker = styled(ReactDatePicker)`
 
 export const MeetingContainer = styled.div`
   background-color: rgba(247, 239, 230, 0.8);
-  box-shadow: 0 0 0.5rem #a6a6a6;
+  box-shadow: 0 0 0.5rem ${lightGrey2};
+  font-size: ${fontSizePrimary};
   padding: 0.8rem;
   border-radius: 2rem;
   width: 50rem;
+
   display: flex;
   flex-direction: column;
+  align-self: center;
 
   p {
     text-align: center;
@@ -51,7 +55,7 @@ export const MeetingContainer = styled.div`
 export const MeetingDataForm = styled.form`
   padding-right: 0.4rem;
   p {
-    color: #686868;
+    color: ${lightGrey3};
   }
 `;
 
@@ -63,7 +67,7 @@ export const MeetingList = styled.div`
   input {
     border: none;
     background-color: inherit;
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid ${lightGrey2};
     line-height: 0.4rem;
     font-size: 1rem;
 

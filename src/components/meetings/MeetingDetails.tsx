@@ -3,17 +3,24 @@ import {
   MeetingContainer,
   MeetingDataForm,
   MeetingList,
+  StyledDatePicker,
 } from "./Meetings.style";
 import { Button } from "../../ui/Button";
 import useDiaryContext from "../../hooks/useDiaryContext";
+import { useNavigate } from "react-router-dom";
 
-interface MeetingDetailsProps {
-  date: string;
-  time: string;
-}
+const MeetingDetails: FC = () => {
+  const { dispatch, state } = useDiaryContext();
+  const { meeting, location, supplies, date } = state;
+  const navigate = useNavigate();
 
-const MeetingDetails: FC<MeetingDetailsProps> = ({ date, time }) => {
-  const { dispatch } = useDiaryContext();
+  const onSubmitMultiple = () => {
+    const data = window.localStorage.getItem("formData");
+    const formData = data ? JSON.parse(data) : [];
+    localStorage.setItem("formData", JSON.stringify([...formData, state]));
+    dispatch({ type: "submitData" });
+    navigate("/calendar/scheduled");
+  };
 
   return (
     <MeetingContainer>
@@ -24,6 +31,7 @@ const MeetingDetails: FC<MeetingDetailsProps> = ({ date, time }) => {
           <input
             type="text"
             name="meeting"
+            value={meeting}
             onChange={({ target }) =>
               dispatch({ type: "meetingData", payload: target.value })
             }
@@ -32,34 +40,33 @@ const MeetingDetails: FC<MeetingDetailsProps> = ({ date, time }) => {
           <input
             type="text"
             name="location"
+            value={location}
             onChange={({ target }) =>
               dispatch({ type: "locationData", payload: target.value })
             }
           />
           <p>When:</p>
-          <input
-            type="text"
-            name="time"
-            value={`${date} at ${time}`}
-            onChange={({ target }) =>
-              dispatch({ type: "dateData", payload: target.value })
-            }
+          <StyledDatePicker
+            selected={date}
+            onChange={() => dispatch({ type: "dateData", payload: date })}
+            showTimeSelect
+            timeFormat="HH:mm"
+            timeIntervals={15}
+            timeCaption="time"
+            dateFormat="MMMM d, yyyy h:mm aa"
           />
           <p>Supplies:</p>
           <input
             type="text"
             name="supplies"
+            value={supplies}
             onChange={({ target }) =>
               dispatch({ type: "suppliesData", payload: target.value })
             }
           />
         </MeetingList>
       </MeetingDataForm>
-      <Button
-        className="small"
-        type="submit"
-        // onClick={handleSubmit}
-      >
+      <Button className="small" type="submit" onClick={onSubmitMultiple}>
         Add
       </Button>
     </MeetingContainer>
