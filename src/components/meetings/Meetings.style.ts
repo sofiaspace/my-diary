@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import { device } from "../../styles/mediaBreakpoints";
-import ReactDatePicker from "react-datepicker";
-import { fontSizePrimary, lightGrey2, lightGrey3 } from "../variables";
+import {
+  fontSizePrimary,
+  lightGrey2,
+  lightGrey3,
+} from "../../styles/variables";
 
 export const NewMeetingContainer = styled.div`
   display: flex;
@@ -17,20 +20,6 @@ export const NewMeetingContainer = styled.div`
   }
   @media ${device.lg} {
     max-width: 90%;
-  }
-`;
-
-export const StyledDatePicker = styled(ReactDatePicker)`
-  border: 2px solid #686868;
-  border-radius: 0.4rem;
-  box-shadow: 0 0 0.5rem #a6a6a6;
-  padding: 0.5rem 0.7rem;
-  text-align: center;
-  background-color: rgba(247, 239, 230, 0.8);
-  margin-right: 7.5rem;
-
-  @media ${device.md} {
-    margin-right: 0.5rem;
   }
 `;
 

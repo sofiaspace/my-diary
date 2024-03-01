@@ -1,23 +1,26 @@
 import styled from "styled-components";
-import { lightGrey1, lightGrey2 } from "../variables";
+import {
+  backgroundColorPrimary,
+  lightGrey1,
+  lightGrey2,
+} from "../../styles/variables";
 
 export const ScheduledMeetingsContainer = styled.div`
   font-size: 1.1rem;
+  padding: 10rem;
 
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding: 10rem;
   gap: 1rem;
 `;
 
 export const ScheduledMeeting = styled.div`
-  background-color: rgba(247, 239, 230, 0.8);
+  background-color: ${backgroundColorPrimary};
   box-shadow: 0 0 0.5rem ${lightGrey2};
   padding: 1rem 2rem;
 
   border-radius: 2rem;
-  width: 60%;
   display: flex;
   flex-direction: column;
 
@@ -25,5 +28,13 @@ export const ScheduledMeeting = styled.div`
     list-style: none;
     border-bottom: 1px solid ${lightGrey1};
     padding-top: 0.3rem;
+  }
+
+  img {
+    align-self: self-end;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;

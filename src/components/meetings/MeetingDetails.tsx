@@ -3,15 +3,15 @@ import {
   MeetingContainer,
   MeetingDataForm,
   MeetingList,
-  StyledDatePicker,
 } from "./Meetings.style";
 import { Button } from "../../ui/Button";
 import useDiaryContext from "../../hooks/useDiaryContext";
 import { useNavigate } from "react-router-dom";
+import DatePicker from "../../ui/DatePicker";
 
 const MeetingDetails: FC = () => {
   const { dispatch, state } = useDiaryContext();
-  const { meeting, location, supplies, date } = state;
+
   const navigate = useNavigate();
 
   const onSubmitMultiple = () => {
@@ -31,7 +31,7 @@ const MeetingDetails: FC = () => {
           <input
             type="text"
             name="meeting"
-            value={meeting}
+            value={state.meeting}
             onChange={({ target }) =>
               dispatch({ type: "meetingData", payload: target.value })
             }
@@ -40,26 +40,22 @@ const MeetingDetails: FC = () => {
           <input
             type="text"
             name="location"
-            value={location}
+            value={state.location}
             onChange={({ target }) =>
               dispatch({ type: "locationData", payload: target.value })
             }
           />
           <p>When:</p>
-          <StyledDatePicker
-            selected={date}
-            onChange={() => dispatch({ type: "dateData", payload: date })}
-            showTimeSelect
-            timeFormat="HH:mm"
-            timeIntervals={15}
-            timeCaption="time"
-            dateFormat="MMMM d, yyyy h:mm aa"
+          <DatePicker
+            onChange={(date: Date) =>
+              dispatch({ type: "dateData", payload: date })
+            }
           />
           <p>Supplies:</p>
           <input
             type="text"
             name="supplies"
-            value={supplies}
+            value={state.supplies}
             onChange={({ target }) =>
               dispatch({ type: "suppliesData", payload: target.value })
             }

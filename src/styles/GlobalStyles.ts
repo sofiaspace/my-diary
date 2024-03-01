@@ -10,7 +10,7 @@ export const GlobalStyles = styled.createGlobalStyle`
         rgb(212, 221, 225, 0.5)
       ),
       url("https://images.unsplash.com/photo-1516661113161-f17f883f6d91?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-    clip-path: polygon(0 0, 0 100%, 100% 70vh, 100% 0);
+    clip-path: polygon(0 0, 0 100%, 100% 75vh, 100% 0);
 
     @media ${device.sm} {
       clip-path: content-box;

@@ -1,5 +1,6 @@
 import React, { FC, useState } from "react";
-import { TodoItem, TodoList, TodoPageContainer } from "./TodoPage.style";
+import { Input, TodoItem, TodoList, TodoPageContainer } from "./TodoPage.style";
+import Image from "../../ui/DeleteImage";
 
 const TodoPage: FC = () => {
   const [value, setValue] = useState<string>("");
@@ -7,8 +8,6 @@ const TodoPage: FC = () => {
   const localStorageList = window.localStorage.getItem("todo");
   const todoList = localStorageList ? JSON.parse(localStorageList) : [];
   const [list, setList] = useState<Array<string> | []>(todoList);
-
-  const src = "circle-with-cross.svg";
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,7 +29,7 @@ const TodoPage: FC = () => {
   return (
     <TodoPageContainer>
       <form onSubmit={(value) => handleSubmit(value)}>
-        <input
+        <Input
           type="text"
           placeholder="Type here:"
           name="todo"
@@ -39,14 +38,10 @@ const TodoPage: FC = () => {
         />
       </form>
       <TodoList>
-        {list.map((item) => (
-          <TodoItem key={item}>
+        {list.map((item, i) => (
+          <TodoItem key={i}>
             {item}
-            <img
-              src={src}
-              alt="delete icon"
-              onClick={() => handleDelete(item)}
-            />
+            <Image onClick={() => handleDelete(item)} />
           </TodoItem>
         ))}
       </TodoList>

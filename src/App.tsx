@@ -11,6 +11,7 @@ import ReviewsPage from "./pages/ReviewsPage/ReviewsPage";
 import { StyledRoutes } from "./styles/App.style";
 import ScheduledMeetings from "./components/meetings/ScheduledMeetings";
 import MeetingDetails from "./components/meetings/MeetingDetails";
+import NewDiary from "./components/diary/NewDiary";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="calendar/new" element={<MeetingDetails />} />
           <Route path="calendar/scheduled" element={<ScheduledMeetings />} />
           <Route path="diary" element={<DiaryPage />} />
+          <Route path="diary/new" element={<NewDiary />} />
           <Route path="customize" element={<CustomizePage />} />
           <Route path="todo" element={<TodoPage />} />
           <Route path="reviews" element={<ReviewsPage />} />
