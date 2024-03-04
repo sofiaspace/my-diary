@@ -1,12 +1,19 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import {
+  backgroundColorPrimary,
+  fontSizePrimary,
+  lightGrey2,
+  lightGrey3,
+  white,
+} from "../../styles/variables";
 
 export const ReviewsPageContainer = styled.div`
-  background-color: rgba(247, 239, 230, 0.8);
-  box-shadow: 0 0 0.5rem #a6a6a6;
+  background-color: ${backgroundColorPrimary};
+  box-shadow: 0 0 0.5rem ${lightGrey2};
   padding: 2.5rem;
   margin: 16rem;
   border-radius: 2rem;
-  font-size: 1.3rem;
+  font-size: ${fontSizePrimary};
 
   display: flex;
   flex-direction: column;
@@ -19,7 +26,7 @@ export const Img = styled.img`
   max-height: 9rem;
   max-width: 9rem;
   border-radius: 50%;
-  border: 0.1rem solid #fff;
+  border: 0.1rem solid ${white};
 `;
 
 export const ReviewContainer = styled.div`
@@ -34,14 +41,14 @@ export const CommentContainer = styled.div`
   gap: 0.2rem;
 
   span {
-    color: #686868;
+    color: ${lightGrey3};
     margin-right: 0.5rem;
   }
 `;
 
 export const Svg = styled.img`
-  max-height: 0.7rem;
-  max-width: 0.7rem;
+  max-height: 1rem;
+  max-width: 1rem;
   opacity: 0.7;
 `;
 
@@ -50,25 +57,28 @@ export const NameContainer = styled.div`
   flex-direction: row;
   align-items: center;
 `;
+
 export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.2rem;
+`;
 
-  button {
-    border-radius: 50%;
-    border: 1px solid #686868;
-    width: 0.9rem;
-    height: 0.9rem;
-    cursor: pointer;
+export const ReviewButton = styled.button<{ isActive: boolean }>`
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      background-color: ${lightGrey3};
+    `}
 
-    &:hover {
-      background-color: #686868;
-    }
+  border-radius: 50%;
+  border: 1px solid ${lightGrey3};
+  width: 0.9rem;
+  height: 0.9rem;
+  cursor: pointer;
 
-    &:active {
-      background-color: #686868;
-    }
+  &:hover {
+    background-color: ${lightGrey3};
   }
 `;

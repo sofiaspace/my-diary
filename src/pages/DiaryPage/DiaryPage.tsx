@@ -1,17 +1,16 @@
 import { FC } from "react";
-import { DiaryPageContainer } from "./DiaryPage.style";
+
 import { Button } from "../../ui/Button";
 import { useNavigate } from "react-router-dom";
+import { DiaryPageContainer } from "./DiaryPage.style";
 
-interface DiaryPageProps {}
-
-const DiaryPage: FC<DiaryPageProps> = ({}) => {
+const DiaryPage: FC = () => {
   const navigate = useNavigate();
+
   return (
     <DiaryPageContainer>
-      <Button className="small" onClick={() => navigate("/diary/new")}>
-        New
-      </Button>
+      <Button onClick={() => navigate("/diary/new")}>New Diary</Button>
+      <Button onClick={() => navigate("/diary/old")}>Old Diaries</Button>
     </DiaryPageContainer>
   );
 };

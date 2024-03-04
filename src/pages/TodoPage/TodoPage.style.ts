@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { device } from "../../styles/mediaBreakpoints";
 import {
   backgroundColorPrimary,
+  borderRadiusPrimary,
   lightGrey1,
   lightGrey2,
   lightGrey3,
@@ -13,7 +14,7 @@ export const TodoPageContainer = styled.div`
 
   background-color: ${backgroundColorPrimary};
   box-shadow: 0 0 0.5rem ${lightGrey2};
-  border-radius: 2rem;
+  border-radius: ${borderRadiusPrimary};
   text-align: left;
   padding: 1rem 3rem;
   align-self: center;
@@ -22,7 +23,7 @@ export const TodoPageContainer = styled.div`
   scrollbar-color: ${lightGrey2};
 
   ::-webkit-scrollbar {
-    border-radius: 2rem;
+    border-radius: ${borderRadiusPrimary};
   }
 `;
 
@@ -39,10 +40,6 @@ export const TodoItem = styled.li`
 
   display: flex;
   justify-content: space-between;
-
-  img:hover {
-    cursor: pointer;
-  }
 `;
 
 export const Input = styled.input`
@@ -57,7 +54,7 @@ export const Input = styled.input`
   &:focus-visible {
     outline: 2px solid ${lightGrey3};
     padding: 0.4rem;
-    border-radius: 2rem;
+    border-radius: ${borderRadiusPrimary};
     padding-right: 6rem;
 
     @media ${device.sm} {

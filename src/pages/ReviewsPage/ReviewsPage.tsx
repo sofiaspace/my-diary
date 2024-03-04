@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import {
   ButtonsContainer,
+  ReviewButton,
   ReviewContainer,
   ReviewsPageContainer,
 } from "./ReviewsPage.style";
@@ -17,7 +18,11 @@ const ReviewsPage: FC = () => {
       </ReviewContainer>
       <ButtonsContainer>
         {[...Array(3)].map((_, i) => (
-          <button key={i} onClick={() => setIsUser(i)} />
+          <ReviewButton
+            key={i}
+            onClick={() => setIsUser(i)}
+            isActive={i === isUser ?? true}
+          />
         ))}
       </ButtonsContainer>
     </ReviewsPageContainer>

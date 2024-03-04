@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC, Fragment } from "react";
 import { CommentContainer, Img, NameContainer, Svg } from "./ReviewsPage.style";
 
 interface UserReviewProps {
@@ -32,7 +32,7 @@ const UserReview: FC<UserReviewProps> = ({ isUser }) => {
   const svgSrc = "star.svg";
 
   return (
-    <>
+    <Fragment>
       <Img src={userReview[isUser].img} alt="User {i}" />
       <CommentContainer>
         {userReview[isUser].review}
@@ -43,7 +43,7 @@ const UserReview: FC<UserReviewProps> = ({ isUser }) => {
           ))}
         </NameContainer>
       </CommentContainer>
-    </>
+    </Fragment>
   );
 };
 

@@ -4,6 +4,7 @@ export const initialState: DiaryState = {
   date: new Date(),
   supplies: "",
   diaryDate: new Date(),
+  diaryText: "",
 };
 
 export interface DiaryState {
@@ -12,6 +13,7 @@ export interface DiaryState {
   date: Date;
   supplies: string;
   diaryDate: Date;
+  diaryText: string;
 }
 export type DiaryAction =
   | { type: "meetingData"; payload: string }
@@ -19,6 +21,7 @@ export type DiaryAction =
   | { type: "dateData"; payload: Date }
   | { type: "submitData" }
   | { type: "suppliesData"; payload: string }
+  | { type: "updateDiaryText"; payload: string }
   | { type: "updateDiaryDate"; payload: Date };
 
 export const DiaryReduce = (state: DiaryState, action: DiaryAction) => {
@@ -49,6 +52,11 @@ export const DiaryReduce = (state: DiaryState, action: DiaryAction) => {
       return {
         ...state,
         diaryDate: action.payload,
+      };
+    case "updateDiaryText":
+      return {
+        ...state,
+        diaryText: action.payload,
       };
     default:
       throw new Error("Unknown Action");

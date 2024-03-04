@@ -47,6 +47,7 @@ const MeetingDetails: FC = () => {
           />
           <p>When:</p>
           <DatePicker
+            selected={state.date}
             onChange={(date: Date) =>
               dispatch({ type: "dateData", payload: date })
             }

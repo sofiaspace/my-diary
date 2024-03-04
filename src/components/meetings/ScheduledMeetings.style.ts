@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {
   backgroundColorPrimary,
+  borderRadiusPrimary,
   lightGrey1,
   lightGrey2,
 } from "../../styles/variables";
@@ -20,21 +21,17 @@ export const ScheduledMeeting = styled.div`
   box-shadow: 0 0 0.5rem ${lightGrey2};
   padding: 1rem 2rem;
 
-  border-radius: 2rem;
+  border-radius: ${borderRadiusPrimary};
   display: flex;
   flex-direction: column;
+  gap: 0.3rem;
 
   li {
     list-style: none;
     border-bottom: 1px solid ${lightGrey1};
-    padding-top: 0.3rem;
-  }
 
-  img {
-    align-self: self-end;
-
-    &:hover {
-      cursor: pointer;
+    &:nth-child(2) {
+      margin-top: -0.4rem;
     }
   }
 `;

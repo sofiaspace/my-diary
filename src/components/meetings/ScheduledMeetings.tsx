@@ -4,7 +4,7 @@ import {
   ScheduledMeetingsContainer,
 } from "./ScheduledMeetings.style";
 import { dateConverter } from "../../ui/dateConverter";
-import Image from "../../ui/DeleteImage";
+import DeleteButton from "../../ui/DeleteButton";
 
 interface Meetings {
   date: string;
@@ -30,7 +30,7 @@ const ScheduledMeetings: FC = () => {
     <ScheduledMeetingsContainer>
       {meetings.map((meeting, i) => (
         <ScheduledMeeting key={i}>
-          <Image key={i} onClick={() => handleDelete(meeting)} />
+          <DeleteButton key={i} onClick={() => handleDelete(meeting)} />
 
           <li>Meeting: {meeting.meeting}</li>
           <li>Date: {dateConverter(meeting.date).toString()}</li>

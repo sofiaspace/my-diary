@@ -1,26 +1,32 @@
 import React, { FC, useState } from "react";
 import { Input, TodoItem, TodoList, TodoPageContainer } from "./TodoPage.style";
-import Image from "../../ui/DeleteImage";
+import DeleteButton from "../../ui/DeleteButton";
+
+interface ListItem {
+  value: string;
+  id: string;
+}
 
 const TodoPage: FC = () => {
   const [value, setValue] = useState<string>("");
 
   const localStorageList = window.localStorage.getItem("todo");
   const todoList = localStorageList ? JSON.parse(localStorageList) : [];
-  const [list, setList] = useState<Array<string> | []>(todoList);
+  const [list, setList] = useState<ListItem[] | []>(todoList);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (value === "") return;
-    const newItem = [...list, value];
-    setList(newItem);
-    window.localStorage.setItem("todo", JSON.stringify(newItem));
+    const id = Date.now().toString();
+    const newList = [...list, { value, id }];
+    setList(newList);
+    window.localStorage.setItem("todo", JSON.stringify(newList));
     setValue("");
   };
 
-  const handleDelete = (item: string) => {
-    const updatedList = list.filter((d) => d !== item);
+  const handleDelete = (id: string) => {
+    const updatedList = list.filter((d) => d.id !== id);
     setList(updatedList);
 
     window.localStorage.setItem("todo", JSON.stringify(updatedList));
@@ -38,10 +44,10 @@ const TodoPage: FC = () => {
         />
       </form>
       <TodoList>
-        {list.map((item, i) => (
-          <TodoItem key={i}>
-            {item}
-            <Image onClick={() => handleDelete(item)} />
+        {list.map(({ id, value }) => (
+          <TodoItem key={id}>
+            {value}
+            <DeleteButton onClick={() => handleDelete(id)} />
           </TodoItem>
         ))}
       </TodoList>

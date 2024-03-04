@@ -1,17 +1,15 @@
 import { FC } from "react";
 import { StyledDatePicker } from "./DatePicker.style";
-import useDiaryContext from "../hooks/useDiaryContext";
 
 interface DatePickerProps {
   onChange: (event: any) => void;
+  selected: Date;
 }
 
-const DatePicker: FC<DatePickerProps> = ({ onChange }) => {
-  const { state } = useDiaryContext();
-
+const DatePicker: FC<DatePickerProps> = ({ onChange, selected }) => {
   return (
     <StyledDatePicker
-      selected={state.date}
+      selected={selected}
       onChange={onChange}
       popperPlacement="top-start"
       enableTabLoop={false}
