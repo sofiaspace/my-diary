@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import "react-datepicker/dist/react-datepicker.css";
-// import NewMeetingComponent from "../../components/meetings/NewMeetingComponent";
 import { CalendarPageContainer, Options } from "./CalendarPage.style";
 import { Button } from "../../ui/Button";
 import { useNavigate } from "react-router-dom";

@@ -3,7 +3,7 @@ import {
   ScheduledMeeting,
   ScheduledMeetingsContainer,
 } from "./ScheduledMeetings.style";
-import { dateConverter } from "../../ui/dateConverter";
+import { dateConverter, timeConverter } from "../../ui/dateConverter";
 import DeleteButton from "../../ui/DeleteButton";
 
 interface Meetings {
@@ -33,7 +33,10 @@ const ScheduledMeetings: FC = () => {
           <DeleteButton key={i} onClick={() => handleDelete(meeting)} />
 
           <li>Meeting: {meeting.meeting}</li>
-          <li>Date: {dateConverter(meeting.date).toString()}</li>
+          <li>
+            Date: {dateConverter(meeting.date).toString()} at{" "}
+            {timeConverter(meeting.date).toString()}
+          </li>
           <li>Location: {meeting.location}</li>
           <li>Supplies: {meeting.supplies}</li>
         </ScheduledMeeting>

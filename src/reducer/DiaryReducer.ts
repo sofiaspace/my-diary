@@ -58,6 +58,7 @@ export const DiaryReduce = (state: DiaryState, action: DiaryAction) => {
         ...state,
         diaryText: action.payload,
       };
+
     default:
       throw new Error("Unknown Action");
   }

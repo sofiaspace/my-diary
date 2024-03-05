@@ -2,14 +2,14 @@ import styled from "styled-components";
 import {
   backgroundColorPrimary,
   fontSizePrimary,
-  lightGrey1,
+  lightBrown,
   lightGrey2,
   lightGrey3,
 } from "../styles/variables";
 
 export const ButtonContainer = styled.div`
   background-color: ${backgroundColorPrimary};
-  box-shadow: 0 0 0.5rem ${lightGrey2};
+  box-shadow: 0 0 0.1rem ${lightGrey2};
   padding: 4rem;
   border-radius: 1.3rem;
   cursor: pointer;
@@ -17,7 +17,7 @@ export const ButtonContainer = styled.div`
   font-size: ${fontSizePrimary};
 
   &:hover {
-    box-shadow: 0 0 2.5rem ${lightGrey3};
+    box-shadow: 0 0 0.5rem ${lightGrey3};
   }
 
   &.small {
@@ -26,10 +26,11 @@ export const ButtonContainer = styled.div`
     max-width: min-content;
     align-self: center;
     font-size: 1rem;
+    box-shadow: none;
+    border: 0.1rem solid ${lightBrown};
 
     &:hover {
-      box-shadow: none;
-      background-color: ${lightGrey1};
+      background-color: ${lightBrown};
     }
   }
   &.medium {

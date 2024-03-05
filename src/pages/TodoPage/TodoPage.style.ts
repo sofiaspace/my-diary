@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { device } from "../../styles/mediaBreakpoints";
 import {
   backgroundColorPrimary,
   borderRadiusPrimary,
+  fontSizeSecondary,
   lightGrey1,
   lightGrey2,
   lightGrey3,
@@ -18,7 +18,7 @@ export const TodoPageContainer = styled.div`
   text-align: left;
   padding: 1rem 3rem;
   align-self: center;
-  font-size: 1.1rem;
+  font-size: ${fontSizeSecondary};
   overflow: auto;
   scrollbar-color: ${lightGrey2};
 
@@ -43,26 +43,25 @@ export const TodoItem = styled.li`
 `;
 
 export const Input = styled.input`
-  border: none;
-  font: inherit;
+  font-family: inherit;
   font-size: 1rem;
-  background-color: inherit;
-  border-bottom: 1px solid ${lightGrey3};
   padding: 0.1rem;
-  transition: 0.5s;
+  width: 50%;
+  border: 0;
+  border-bottom: 2px solid ${lightGrey3};
+  outline: 0;
+  color: ${lightGrey3};
+  background: transparent;
+  background-clip: text;
 
-  &:focus-visible {
-    outline: 2px solid ${lightGrey3};
-    padding: 0.4rem;
-    border-radius: ${borderRadiusPrimary};
-    padding-right: 6rem;
-
-    @media ${device.sm} {
-      padding-right: 3rem;
-    }
+  &:placeholder-shown {
+    font-size: 0.9rem;
+    color: ${lightGrey3};
+    cursor: text;
   }
 
   &:focus::placeholder {
-    color: transparent;
+    padding-left: 0.3rem;
+    background: transparent;
   }
 `;

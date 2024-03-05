@@ -3,7 +3,6 @@ import HomePage from "./pages/HomePage/HomePage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import CalendarPage from "./pages/CalendarPage/CalendarPage";
 import DiaryPage from "./pages/DiaryPage/DiaryPage";
-import CustomizePage from "./pages/CustomizePage/CustomizePage";
 import TodoPage from "./pages/TodoPage/TodoPage";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import NavBar from "./pages/HomePage/NavBar";
@@ -13,6 +12,7 @@ import ScheduledMeetings from "./components/meetings/ScheduledMeetings";
 import MeetingDetails from "./components/meetings/MeetingDetails";
 import NewDiary from "./components/diary/NewDiary";
 import OldDiaries from "./components/diary/OldDiaries";
+import DiaryDetails from "./components/diary/DiaryDetails";
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
           <Route path="diary" element={<DiaryPage />} />
           <Route path="diary/new" element={<NewDiary />} />
           <Route path="diary/old" element={<OldDiaries />} />
-          <Route path="customize" element={<CustomizePage />} />
+          <Route path="diary/old/:id" element={<DiaryDetails />} />
           <Route path="todo" element={<TodoPage />} />
           <Route path="reviews" element={<ReviewsPage />} />
           <Route path="*" element={<PageNotFound />} />

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../styles/mediaBreakpoints";
 import {
+  backgroundColorPrimary,
   fontSizePrimary,
   lightGrey2,
   lightGrey3,
@@ -24,7 +25,7 @@ export const NewMeetingContainer = styled.div`
 `;
 
 export const MeetingContainer = styled.div`
-  background-color: rgba(247, 239, 230, 0.8);
+  background-color: ${backgroundColorPrimary};
   box-shadow: 0 0 0.5rem ${lightGrey2};
   font-size: ${fontSizePrimary};
   padding: 0.8rem;
@@ -59,6 +60,7 @@ export const MeetingList = styled.div`
     border-bottom: 1px solid ${lightGrey2};
     line-height: 0.4rem;
     font-size: 1rem;
+    background-clip: text;
 
     &:focus {
       outline: none;

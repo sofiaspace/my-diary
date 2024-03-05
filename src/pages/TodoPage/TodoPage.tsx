@@ -36,8 +36,9 @@ const TodoPage: FC = () => {
     <TodoPageContainer>
       <form onSubmit={(value) => handleSubmit(value)}>
         <Input
+          autoFocus={true}
           type="text"
-          placeholder="Type here:"
+          placeholder="Type here"
           name="todo"
           value={value}
           onChange={(e) => setValue(e.target.value)}

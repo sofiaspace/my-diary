@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { DiaryHeader, NewDiaryContainer, StyledTextArea } from "./Diary.style";
+import { DiaryContainer, DiaryHeader, StyledTextArea } from "./Diary.style";
 import useDiaryContext from "../../hooks/useDiaryContext";
 import DatePicker from "../../ui/DatePicker";
 import { Button } from "../../ui/Button";
@@ -13,18 +13,20 @@ const NewDiary: FC = () => {
     const data = window.localStorage.getItem("diary");
     const diaryData = data ? JSON.parse(data) : [];
 
+    const id = Date.now().toString();
+
     localStorage.setItem(
       "diary",
       JSON.stringify([
         ...diaryData,
-        { diaryDate: state.diaryDate, diaryText: state.diaryText },
+        { diaryDate: state.diaryDate, diaryText: state.diaryText, id: id },
       ])
     );
     dispatch({ type: "submitData" });
     navigate("/diary/old");
   };
   return (
-    <NewDiaryContainer>
+    <DiaryContainer>
       <DiaryHeader>
         <DatePicker
           selected={state.diaryDate}
@@ -46,7 +48,7 @@ const NewDiary: FC = () => {
         placeholder="Add your story"
         required
       ></StyledTextArea>
-    </NewDiaryContainer>
+    </DiaryContainer>
   );
 };
 

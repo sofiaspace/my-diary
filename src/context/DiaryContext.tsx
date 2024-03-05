@@ -26,11 +26,6 @@ export const DiaryProvider: FC<PropsWithChildren> = ({ children }) => {
     initialState
   );
 
-  // const onSubmit = () => {
-  //   localStorage.setItem("formData", JSON.stringify(state));
-  //   dispatch({ type: "submitData" });
-  // };
-
   return (
     <DiaryContext.Provider value={{ state, dispatch }}>
       {children}

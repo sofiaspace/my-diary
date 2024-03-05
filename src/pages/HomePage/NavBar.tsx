@@ -20,9 +20,6 @@ const NavBar: FC = () => {
         <li>
           <StyledNavLink to="/diary">DIARY</StyledNavLink>
         </li>
-        <li>
-          <StyledNavLink to="/customize">CUSTOMIZE</StyledNavLink>
-        </li>
       </NavBarList>
     </NavBarContainer>
   );

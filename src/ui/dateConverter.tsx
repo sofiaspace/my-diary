@@ -3,11 +3,13 @@ export const dateConverter = (date: string) => {
   const [year, month, day] = datePart.split("-");
   const formattedDate = `${day}-${month}-${year}`;
 
+  return formattedDate;
+};
+
+export const timeConverter = (date: string) => {
   const timePart = date.split("T")[1].split(".")[0];
   const [hours, minutes] = timePart.split(":");
   const time = `${hours}:${minutes}`;
 
-  const meetingDate = `${formattedDate} at ${time}`;
-
-  return meetingDate;
+  return time;
 };

@@ -1,5 +1,4 @@
 import { FC } from "react";
-
 import { Button } from "../../ui/Button";
 import { useNavigate } from "react-router-dom";
 import { DiaryPageContainer } from "./DiaryPage.style";

@@ -7,14 +7,15 @@ import {
   lightGrey2,
 } from "../../styles/variables";
 
-export const NewDiaryContainer = styled.div`
+export const DiaryContainer = styled.div`
   align-self: center;
+  text-align: center;
   font-size: ${fontSizePrimary};
   background-color: ${backgroundColorPrimary};
   box-shadow: 0 0 0.5rem ${lightGrey2};
   border-radius: ${borderRadiusPrimary};
   width: 70%;
-  height: 80%;
+  max-height: 90%;
   padding: 1rem 2rem;
 
   display: flex;
@@ -24,13 +25,18 @@ export const NewDiaryContainer = styled.div`
   &:first-child {
     border-bottom: ${lightGrey2};
   }
+
+  p {
+    font-size: ${fontSizeSecondary};
+    text-align: justify;
+  }
 `;
 
 export const DiaryData = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(7, 1fr);
-  gap: 1rem;
+  gap: 0.5rem;
 `;
 
 export const DiaryHeader = styled.div`
@@ -43,7 +49,7 @@ export const DiaryHeader = styled.div`
 export const StyledTextArea = styled.textarea`
   margin-top: 0.6rem;
   background-color: transparent;
-  line-height: 2.5rem;
+  line-height: 2rem;
   font-size: ${fontSizeSecondary};
   font-family: inherit;
   border-style: none;
@@ -51,6 +57,22 @@ export const StyledTextArea = styled.textarea`
   width: 100%;
 
   &::placeholder {
-    padding-left: 0.7rem;
+    padding-left: 3rem;
+    font-size: 1rem;
   }
+
+  &:focus::placeholder {
+    color: transparent;
+  }
+
+  &:focus {
+    outline: ${lightGrey2};
+  }
+`;
+
+export const DiaryDetailsContainer = styled.div`
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
