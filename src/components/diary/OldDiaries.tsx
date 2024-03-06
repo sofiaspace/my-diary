@@ -3,8 +3,7 @@ import { Button } from "../../ui/Button";
 import { dateConverter } from "../../ui/dateConverter";
 import { DiaryContainer, DiaryData } from "./Diary.style";
 import { useNavigate } from "react-router-dom";
-import { Options } from "../../pages/CalendarPage/CalendarPage.style";
-import { DiaryPageContainer } from "../../pages/DiaryPage/DiaryPage.style";
+import { NavLinkButton } from "../../styles/App.style";
 
 export interface DiaryDataInterface {
   diaryDate: string;
@@ -18,19 +17,11 @@ const OldDiaries: FC = () => {
 
   const navigate = useNavigate();
 
-  const handleClick = (id: string) => {
-    navigate(`/diary/old/${id}`);
-  };
-
   if (diary.length === 0) {
     return (
-      <DiaryPageContainer>
-        <Options>
-          <Button onClick={() => navigate("/diary/new")}>
-            Create your first diary memory
-          </Button>
-        </Options>
-      </DiaryPageContainer>
+      <NavLinkButton to="/diary/new">
+        Click here to create your first diary memory
+      </NavLinkButton>
     );
   }
 
@@ -38,7 +29,11 @@ const OldDiaries: FC = () => {
     <DiaryContainer>
       <DiaryData>
         {diary.map(({ diaryDate, id }) => (
-          <Button className="medium" key={id} onClick={() => handleClick(id)}>
+          <Button
+            className="medium"
+            key={id}
+            onClick={() => navigate(`/diary/old/${id}`)}
+          >
             {dateConverter(diaryDate).toString()}
           </Button>
         ))}

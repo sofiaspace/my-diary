@@ -5,6 +5,7 @@ import {
 } from "./ScheduledMeetings.style";
 import { dateConverter, timeConverter } from "../../ui/dateConverter";
 import DeleteButton from "../../ui/DeleteButton";
+import { NavLinkButton } from "../../styles/App.style";
 
 interface Meetings {
   date: string;
@@ -25,6 +26,13 @@ const ScheduledMeetings: FC = () => {
 
     window.localStorage.setItem("formData", JSON.stringify(updatedList));
   };
+
+  if (meetings.length === 0)
+    return (
+      <NavLinkButton to="/calendar/new">
+        Click here to create your first meeting
+      </NavLinkButton>
+    );
 
   return (
     <ScheduledMeetingsContainer>

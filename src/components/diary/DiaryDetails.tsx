@@ -33,10 +33,10 @@ const DiaryDetails: FC = () => {
   return (
     <DiaryContainer>
       <DiaryDetailsContainer>
-        <>
+        <span>
           {dateConverter(day.diaryDate).toString()} at{" "}
           {timeConverter(day.diaryDate).toString()}
-        </>
+        </span>
         <DeleteButton onClick={() => handleDelete(id)} />
       </DiaryDetailsContainer>
       <p>{day.diaryText}</p>

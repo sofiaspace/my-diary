@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { fontSizePrimary } from "../../styles/variables";
 
 export const AboutPageContainer = styled.div`
   display: flex;
@@ -6,12 +7,11 @@ export const AboutPageContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  font-size: 1.3rem;
+  font-size: ${fontSizePrimary};
 `;
 
 export const AboutPageText = styled.div`
-  margin: 3.5rem 1rem;
-  padding: 3rem;
+  padding: 2rem;
   max-width: 40rem;
   background-color: rgba(247, 239, 230, 0.8);
   box-shadow: 0 0 0.5rem #a6a6a6;

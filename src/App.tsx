@@ -13,10 +13,12 @@ import MeetingDetails from "./components/meetings/MeetingDetails";
 import NewDiary from "./components/diary/NewDiary";
 import OldDiaries from "./components/diary/OldDiaries";
 import DiaryDetails from "./components/diary/DiaryDetails";
+import MobileNavBar from "./components/navBar/MobileNavBar";
 
 function App() {
   return (
     <BrowserRouter>
+      <MobileNavBar />
       <NavBar />
       <StyledRoutes>
         <Routes>

@@ -7,7 +7,8 @@ export const lightBrown2 = "#daa06d";
 
 export const white = "#fff";
 
-export const backgroundColorPrimary = "rgba(247, 239, 230, 0.8)";
+export const backgroundColorPrimary = "#f7efe6cc";
+export const backgroundColorSecondary = "#e4dfd8";
 
 export const fontSizePrimary = "1.3rem";
 export const fontSizeSecondary = "1.1rem";

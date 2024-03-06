@@ -7,6 +7,10 @@ export const NavBarContainer = styled.nav`
   flex-direction: row;
   justify-content: end;
   font-size: 1.2rem;
+
+  @media ${device.sm} {
+    display: none;
+  }
 `;
 
 export const NavBarList = styled.ul`
@@ -41,4 +45,15 @@ export const NavBarList = styled.ul`
 export const StyledNavLink = styled(NavLink)`
   color: inherit;
   text-decoration: none;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+
+  img {
+    align-self: baseline;
+    opacity: 0.8;
+  }
 `;

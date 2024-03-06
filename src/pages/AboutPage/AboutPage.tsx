@@ -13,8 +13,9 @@ const AboutPage: FC = () => {
           self-reflection, organization and planning. This diary was created
           with the intention of being your sacred place. You can plan your
           meetings ahead, fill up a to-do list and write down your story and
-          feelings in the diary. Don't forget that you can customize the page
-          with different colors!{" "}
+          feelings in the diary. All information will be stored in your
+          computer, so you don't have to worry that you will forget about
+          something!
         </p>
         <button onClick={() => navigate("/reviews")}>
           See our reviews <span>&rarr;</span>

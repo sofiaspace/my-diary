@@ -5,6 +5,7 @@ import {
   fontSizePrimary,
   fontSizeSecondary,
   lightGrey2,
+  lightGrey3,
 } from "../../styles/variables";
 
 export const DiaryContainer = styled.div`
@@ -15,8 +16,10 @@ export const DiaryContainer = styled.div`
   box-shadow: 0 0 0.5rem ${lightGrey2};
   border-radius: ${borderRadiusPrimary};
   width: 70%;
-  max-height: 90%;
+  max-height: 87%;
   padding: 1rem 2rem;
+  line-height: 1.7rem;
+  overflow: auto;
 
   display: flex;
   flex-direction: column;
@@ -54,7 +57,7 @@ export const StyledTextArea = styled.textarea`
   font-family: inherit;
   border-style: none;
   resize: none;
-  width: 100%;
+  text-align: justify;
 
   &::placeholder {
     padding-left: 3rem;
@@ -75,4 +78,9 @@ export const DiaryDetailsContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  span {
+    text-decoration: underline;
+    text-decoration-color: ${lightGrey3};
+  }
 `;
