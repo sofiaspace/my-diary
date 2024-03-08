@@ -19,21 +19,17 @@ export const HeaderContainer = styled.div`
   padding: 0 1rem;
 
   @media ${device.lg} {
-    font-size: 5rem;
-    margin: 6rem 2.5rem;
+    font-size: 9rem;
+    margin: 6rem 9.5rem;
   }
+
   @media ${device.md} {
-    font-size: 4.5rem;
-    margin: 2rem 2.5rem;
+    font-size: 7rem;
   }
   @media ${device.sm} {
-    font-size: 3.5rem;
     margin: 2rem 1rem;
-    padding: 0 1rem;
   }
   @media ${device.xs} {
-    font-size: 2.5rem;
-    margin: 1rem 0.5rem;
-    padding: 0 1rem;
+    font-size: 4rem;
   }
 `;

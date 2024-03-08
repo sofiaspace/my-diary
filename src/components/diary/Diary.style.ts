@@ -7,6 +7,7 @@ import {
   lightGrey2,
   lightGrey3,
 } from "../../styles/variables";
+import { device } from "../../styles/mediaBreakpoints";
 
 export const DiaryContainer = styled.div`
   align-self: center;
@@ -40,6 +41,21 @@ export const DiaryData = styled.div`
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(7, 1fr);
   gap: 0.5rem;
+
+  @media ${device.md} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media ${device.sm} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media ${device.xs} {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const DiaryHeader = styled.div`
@@ -47,6 +63,12 @@ export const DiaryHeader = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+
+  @media ${device.sm} {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
 `;
 
 export const StyledTextArea = styled.textarea`
@@ -62,6 +84,10 @@ export const StyledTextArea = styled.textarea`
   &::placeholder {
     padding-left: 3rem;
     font-size: 1rem;
+
+    @media ${device.sm} {
+      padding-left: 0;
+    }
   }
 
   &:focus::placeholder {

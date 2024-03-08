@@ -34,12 +34,10 @@ const NavBar: FC = () => {
     <NavBarContainer>
       <NavBarList>
         {routes.map((route, i) => (
-          <li>
-            <StyledNavLink to={route.link} key={i}>
-              <img src={route.icon} alt="icon" />
-              {route.title}
-            </StyledNavLink>
-          </li>
+          <StyledNavLink to={route.link} key={i}>
+            <img src={route.icon} alt="icon" />
+            {route.title}
+          </StyledNavLink>
         ))}
       </NavBarList>
     </NavBarContainer>

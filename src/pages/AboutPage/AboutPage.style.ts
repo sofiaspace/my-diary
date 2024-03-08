@@ -1,5 +1,13 @@
 import styled from "styled-components";
-import { fontSizePrimary } from "../../styles/variables";
+import {
+  backgroundColorPrimary,
+  borderRadiusPrimary,
+  fontSizePrimary,
+  fontSizeSecondary,
+  lightGrey2,
+  lightGrey3,
+} from "../../styles/variables";
+import { device } from "../../styles/mediaBreakpoints";
 
 export const AboutPageContainer = styled.div`
   display: flex;
@@ -8,14 +16,27 @@ export const AboutPageContainer = styled.div`
   align-items: center;
 
   font-size: ${fontSizePrimary};
+
+  @media ${device.md} {
+    margin: 0 1.5rem;
+  }
+
+  @media ${device.sm} {
+    font-size: ${fontSizeSecondary};
+  }
+
+  @media ${device.xs} {
+    overflow: auto;
+    margin-top: 2rem;
+  }
 `;
 
 export const AboutPageText = styled.div`
   padding: 2rem;
   max-width: 40rem;
-  background-color: rgba(247, 239, 230, 0.8);
-  box-shadow: 0 0 0.5rem #a6a6a6;
-  border-radius: 2rem;
+  background-color: ${backgroundColorPrimary};
+  box-shadow: 0 0 0.5rem ${lightGrey2};
+  border-radius: ${borderRadiusPrimary};
   text-align: justify;
 
   display: flex;
@@ -40,7 +61,7 @@ export const AboutPageText = styled.div`
     }
 
     &:hover {
-      color: #686868;
+      color: ${lightGrey3};
 
       span {
         margin-left: 0.4rem;

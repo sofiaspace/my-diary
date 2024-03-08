@@ -2,7 +2,6 @@ import { FC, useState } from "react";
 import {
   ButtonsContainer,
   ReviewButton,
-  ReviewContainer,
   ReviewsPageContainer,
 } from "./ReviewsPage.style";
 import UserReview from "./UserReview";
@@ -13,9 +12,7 @@ const ReviewsPage: FC = () => {
   return (
     <ReviewsPageContainer>
       Reviews:
-      <ReviewContainer>
-        <UserReview isUser={isUser} />
-      </ReviewContainer>
+      <UserReview isUser={isUser} />
       <ButtonsContainer>
         {[...Array(3)].map((_, i) => (
           <ReviewButton

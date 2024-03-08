@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { device } from "../../styles/mediaBreakpoints";
+import { lightGrey1 } from "../../styles/variables";
 
 export const MobileNavContainer = styled.div`
   @media ${device.lg}, ${device.xl}, ${device.xxl} {
@@ -12,22 +13,27 @@ export const MobileNavContainer = styled.div`
   }
 `;
 
-export const MobileList = styled.ul`
+export const MobileList = styled.div`
+  background-color: #f7efe6;
+  width: -webkit-fill-available;
   position: absolute;
-  padding-left: 1rem;
+  margin-top: 0;
+
   list-style: none;
   font-size: 1rem;
-  li:not(:last-child) {
-    padding-bottom: 0.4rem;
-  }
 `;
 
 export const MobileNavLink = styled(NavLink)`
   color: inherit;
   text-decoration: none;
+  padding: 0.3rem;
 
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.4rem;
+
+  &:hover {
+    background-color: ${lightGrey1};
+  }
 `;

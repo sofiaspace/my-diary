@@ -1,9 +1,5 @@
 import { FC } from "react";
-import {
-  MeetingContainer,
-  MeetingDataForm,
-  MeetingList,
-} from "./Meetings.style";
+import { MeetingContainer, MeetingDataForm } from "./Meetings.style";
 import { Button } from "../../ui/Button";
 import useDiaryContext from "../../hooks/useDiaryContext";
 import { useNavigate } from "react-router-dom";
@@ -24,44 +20,42 @@ const MeetingDetails: FC = () => {
 
   return (
     <MeetingContainer>
-      <p>Meeting details:</p>
+      <span>Meeting details:</span>
       <MeetingDataForm>
-        <MeetingList>
-          <p>Meeting:</p>
-          <input
-            type="text"
-            name="meeting"
-            value={state.meeting}
-            onChange={({ target }) =>
-              dispatch({ type: "meetingData", payload: target.value })
-            }
-          />
-          <p>Location:</p>
-          <input
-            type="text"
-            name="location"
-            value={state.location}
-            onChange={({ target }) =>
-              dispatch({ type: "locationData", payload: target.value })
-            }
-          />
-          <p>When:</p>
-          <DatePicker
-            selected={state.date}
-            onChange={(date: Date) =>
-              dispatch({ type: "dateData", payload: date })
-            }
-          />
-          <p>Supplies:</p>
-          <input
-            type="text"
-            name="supplies"
-            value={state.supplies}
-            onChange={({ target }) =>
-              dispatch({ type: "suppliesData", payload: target.value })
-            }
-          />
-        </MeetingList>
+        <p>Meeting:</p>
+        <input
+          type="text"
+          name="meeting"
+          value={state.meeting}
+          onChange={({ target }) =>
+            dispatch({ type: "meetingData", payload: target.value })
+          }
+        />
+        <p>Location:</p>
+        <input
+          type="text"
+          name="location"
+          value={state.location}
+          onChange={({ target }) =>
+            dispatch({ type: "locationData", payload: target.value })
+          }
+        />
+        <p>When:</p>
+        <DatePicker
+          selected={state.date}
+          onChange={(date: Date) =>
+            dispatch({ type: "dateData", payload: date })
+          }
+        />
+        <p>Supplies:</p>
+        <input
+          type="text"
+          name="supplies"
+          value={state.supplies}
+          onChange={({ target }) =>
+            dispatch({ type: "suppliesData", payload: target.value })
+          }
+        />
       </MeetingDataForm>
       <Button className="small" type="submit" onClick={onSubmitMultiple}>
         Add

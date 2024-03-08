@@ -6,6 +6,7 @@ import {
 import { dateConverter, timeConverter } from "../../ui/dateConverter";
 import DeleteButton from "../../ui/DeleteButton";
 import { NavLinkButton } from "../../styles/App.style";
+import { Options } from "../../pages/CalendarPage/CalendarPage.style";
 
 interface Meetings {
   date: string;
@@ -29,9 +30,11 @@ const ScheduledMeetings: FC = () => {
 
   if (meetings.length === 0)
     return (
-      <NavLinkButton to="/calendar/new">
-        Click here to create your first meeting
-      </NavLinkButton>
+      <Options>
+        <NavLinkButton to="/calendar/new">
+          Click here to create your first meeting
+        </NavLinkButton>
+      </Options>
     );
 
   return (

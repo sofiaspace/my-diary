@@ -1,5 +1,11 @@
-import { FC, Fragment } from "react";
-import { CommentContainer, Img, NameContainer, Svg } from "./ReviewsPage.style";
+import { FC } from "react";
+import {
+  CommentContainer,
+  Img,
+  NameContainer,
+  Svg,
+  UserReviewContainer,
+} from "./ReviewsPage.style";
 
 interface UserReviewProps {
   isUser: number;
@@ -32,18 +38,20 @@ const UserReview: FC<UserReviewProps> = ({ isUser }) => {
   const svgSrc = "star.svg";
 
   return (
-    <Fragment>
+    <UserReviewContainer>
       <Img src={userReview[isUser].img} alt="User {i}" />
       <CommentContainer>
         {userReview[isUser].review}
         <NameContainer>
           <span>-{userReview[isUser].name}</span>
-          {[...Array(5)].map((_, i) => (
-            <Svg key={i} src={svgSrc} alt="star" />
-          ))}
+          <span>
+            {[...Array(5)].map((_, i) => (
+              <Svg key={i} src={svgSrc} alt="star" />
+            ))}
+          </span>
         </NameContainer>
       </CommentContainer>
-    </Fragment>
+    </UserReviewContainer>
   );
 };
 

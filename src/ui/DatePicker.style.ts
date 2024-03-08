@@ -1,6 +1,7 @@
 import ReactDatePicker from "react-datepicker";
 import styled from "styled-components";
 import { backgroundColorPrimary, lightBrown2 } from "../styles/variables";
+import { device } from "../styles/mediaBreakpoints";
 
 export const StyledDatePicker = styled(ReactDatePicker)`
   border-radius: 0.5rem;
@@ -9,9 +10,12 @@ export const StyledDatePicker = styled(ReactDatePicker)`
   text-align: center;
   background-color: ${backgroundColorPrimary};
   border: none;
-  font-size: 0.9rem;
 
   &:focus {
     outline: none;
+  }
+
+  @media ${device.sm} {
+    padding: 0.4rem;
   }
 `;

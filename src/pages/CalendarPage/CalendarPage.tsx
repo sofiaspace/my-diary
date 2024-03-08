@@ -1,23 +1,18 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import { CalendarPageContainer, Options } from "./CalendarPage.style";
-import { Button } from "../../ui/Button";
-import { useNavigate } from "react-router-dom";
+import { NavLinkButton } from "../../styles/App.style";
 
-interface CalendarPageProps {}
-
-const CalendarPage: FC<CalendarPageProps> = () => {
-  const navigate = useNavigate();
-
+const CalendarPage: FC = () => {
   return (
     <CalendarPageContainer>
       <Options>
-        <Button onClick={() => navigate("/calendar/new")}>
-          Create new meeting
-        </Button>
-        <Button onClick={() => navigate("/calendar/scheduled")}>
-          Scheduled meetings
-        </Button>
+        <NavLinkButton to="/calendar/new">
+          <span>New meeting</span>
+        </NavLinkButton>
+        <NavLinkButton to="/calendar/scheduled">
+          <span>Scheduled meetings</span>
+        </NavLinkButton>
       </Options>
     </CalendarPageContainer>
   );

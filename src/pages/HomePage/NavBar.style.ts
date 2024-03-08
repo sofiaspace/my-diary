@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../styles/mediaBreakpoints";
 import { NavLink } from "react-router-dom";
+import { lightGrey3 } from "../../styles/variables";
 
 export const NavBarContainer = styled.nav`
   display: flex;
@@ -13,44 +14,34 @@ export const NavBarContainer = styled.nav`
   }
 `;
 
-export const NavBarList = styled.ul`
+export const NavBarList = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   padding: 0 1rem;
   list-style: none;
   flex-wrap: wrap;
-
-  /* @media ${device.md} {
-  }
-  @media ${device.sm} {
-  } */
-
-  li {
-    padding: 0.5rem;
-    &:hover {
-      cursor: pointer;
-      color: #686868;
-    }
-
-    @media ${device.xs} {
-      padding: 0.2rem;
-    }
-    @media ${device.md} {
-      padding: 0.3rem;
-    }
-  }
 `;
 
 export const StyledNavLink = styled(NavLink)`
   color: inherit;
   text-decoration: none;
-
+  margin-top: 0.5rem;
+  padding: 0.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 0.3rem;
+
+  &:hover {
+    cursor: pointer;
+    color: ${lightGrey3};
+  }
+
+  @media ${device.md} {
+    padding: 0.4rem;
+  }
 
   img {
     align-self: baseline;

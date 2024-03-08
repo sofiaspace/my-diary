@@ -1,7 +1,6 @@
 import { FC, useEffect, useRef, useState } from "react";
 import MenuButton from "../../ui/MenuButton";
 import { routes } from "../../pages/HomePage/NavBar";
-
 import {
   MobileList,
   MobileNavContainer,
@@ -31,12 +30,14 @@ const MobileNavBar: FC = () => {
       {isOpen === true && (
         <MobileList>
           {routes.map((route, i) => (
-            <li>
-              <MobileNavLink to={route.link} key={i}>
-                <img src={route.icon} alt="icon" />
-                {route.title}
-              </MobileNavLink>
-            </li>
+            <MobileNavLink
+              to={route.link}
+              key={i}
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <img src={route.icon} alt="icon" />
+              {route.title}
+            </MobileNavLink>
           ))}
         </MobileList>
       )}

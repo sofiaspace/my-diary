@@ -25,9 +25,9 @@ export const StyledMenuButton = styled.button`
   &:hover {
     cursor: pointer;
   }
+
   img {
     padding: inherit;
-
     vertical-align: middle;
   }
 `;
