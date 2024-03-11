@@ -2,8 +2,12 @@ import { FC, useState } from "react";
 import { DiaryDataInterface } from "./OldDiaries";
 import { useNavigate, useParams } from "react-router-dom";
 import { DiaryContainer, DiaryDetailsContainer } from "./Diary.style";
-import { dateConverter, timeConverter } from "../../ui/dateConverter";
-import DeleteButton from "../../ui/DeleteButton";
+import {
+  dateConverter,
+  timeConverter,
+} from "../../ui/DateConverter/dateConverter";
+import DeleteButton from "../../ui/Buttons/DeleteButton";
+import { DefinedRoutes } from "../../App";
 
 const DiaryDetails: FC = () => {
   const { id } = useParams();
@@ -27,7 +31,7 @@ const DiaryDetails: FC = () => {
     setIsDiary(updatedDiary);
 
     window.localStorage.setItem("diary", JSON.stringify(updatedDiary));
-    navigate("/diary/old");
+    navigate(DefinedRoutes.OldDiaries);
   };
 
   return (

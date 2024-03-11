@@ -26,9 +26,11 @@ export const HeaderContainer = styled.div`
   @media ${device.md} {
     font-size: 7rem;
   }
+
   @media ${device.sm} {
     margin: 2rem 1rem;
   }
+
   @media ${device.xs} {
     font-size: 4rem;
   }

@@ -5,7 +5,7 @@ import {
   fontSizeSecondary,
   lightGrey1,
   lightGrey2,
-} from "../../styles/variables";
+} from "../../styles/variables.style";
 import { device } from "../../styles/mediaBreakpoints";
 
 export const ScheduledMeetingsContainer = styled.div`

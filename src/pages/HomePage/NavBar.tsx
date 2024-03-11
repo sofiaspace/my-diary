@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { NavBarContainer, NavBarList, StyledNavLink } from "./NavBar.style";
 
-export const routes = [
+export const navRoutes = [
   {
     title: "HOME",
     link: "/",
@@ -33,7 +33,7 @@ const NavBar: FC = () => {
   return (
     <NavBarContainer>
       <NavBarList>
-        {routes.map((route, i) => (
+        {navRoutes.map((route, i) => (
           <StyledNavLink to={route.link} key={i}>
             <img src={route.icon} alt="icon" />
             {route.title}

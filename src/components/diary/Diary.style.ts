@@ -2,16 +2,16 @@ import styled from "styled-components";
 import {
   backgroundColorPrimary,
   borderRadiusPrimary,
+  darkGrey,
   fontSizePrimary,
   fontSizeSecondary,
   lightGrey2,
-  lightGrey3,
-} from "../../styles/variables";
+} from "../../styles/variables.style";
 import { device } from "../../styles/mediaBreakpoints";
 
 export const DiaryContainer = styled.div`
   align-self: center;
-  text-align: center;
+  text-align: justify;
   font-size: ${fontSizePrimary};
   background-color: ${backgroundColorPrimary};
   box-shadow: 0 0 0.5rem ${lightGrey2};
@@ -30,9 +30,19 @@ export const DiaryContainer = styled.div`
     border-bottom: ${lightGrey2};
   }
 
-  p {
+  span {
     font-size: ${fontSizeSecondary};
     text-align: justify;
+  }
+
+  @media ${device.sm} {
+    padding: 1rem;
+    width: 80%;
+    font-size: ${fontSizeSecondary};
+  }
+
+  @media ${device.md} {
+    width: 80%;
   }
 `;
 
@@ -61,13 +71,14 @@ export const DiaryData = styled.div`
 export const DiaryHeader = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: left;
+  gap: 1rem;
   align-items: center;
 
   @media ${device.sm} {
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 0;
   }
 `;
 
@@ -82,12 +93,7 @@ export const StyledTextArea = styled.textarea`
   text-align: justify;
 
   &::placeholder {
-    padding-left: 3rem;
     font-size: 1rem;
-
-    @media ${device.sm} {
-      padding-left: 0;
-    }
   }
 
   &:focus::placeholder {
@@ -100,13 +106,13 @@ export const StyledTextArea = styled.textarea`
 `;
 
 export const DiaryDetailsContainer = styled.div`
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
   span {
     text-decoration: underline;
-    text-decoration-color: ${lightGrey3};
+    text-decoration-color: ${darkGrey};
   }
 `;

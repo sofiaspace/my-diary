@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { Input, TodoItem, TodoList, TodoPageContainer } from "./TodoPage.style";
-import DeleteButton from "../../ui/DeleteButton";
+import DeleteButton from "../../ui/Buttons/DeleteButton";
 
 interface ListItem {
   value: string;
@@ -12,7 +12,7 @@ const TodoPage: FC = () => {
 
   const localStorageList = window.localStorage.getItem("todo");
   const todoList = localStorageList ? JSON.parse(localStorageList) : [];
-  const [list, setList] = useState<ListItem[] | []>(todoList);
+  const [list, setList] = useState<ListItem[]>(todoList);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

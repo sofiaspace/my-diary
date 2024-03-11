@@ -3,8 +3,11 @@ import {
   ScheduledMeeting,
   ScheduledMeetingsContainer,
 } from "./ScheduledMeetings.style";
-import { dateConverter, timeConverter } from "../../ui/dateConverter";
-import DeleteButton from "../../ui/DeleteButton";
+import {
+  dateConverter,
+  timeConverter,
+} from "../../ui/DateConverter/dateConverter";
+import DeleteButton from "../../ui/Buttons/DeleteButton";
 import { NavLinkButton } from "../../styles/App.style";
 import { Options } from "../../pages/CalendarPage/CalendarPage.style";
 
@@ -45,8 +48,7 @@ const ScheduledMeetings: FC = () => {
 
           <li>Meeting: {meeting.meeting}</li>
           <li>
-            Date: {dateConverter(meeting.date).toString()} at{" "}
-            {timeConverter(meeting.date).toString()}
+            Date: {dateConverter(meeting.date)} at {timeConverter(meeting.date)}
           </li>
           <li>Location: {meeting.location}</li>
           <li>Supplies: {meeting.supplies}</li>

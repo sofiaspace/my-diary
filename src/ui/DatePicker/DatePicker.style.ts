@@ -1,7 +1,23 @@
 import ReactDatePicker from "react-datepicker";
 import styled from "styled-components";
-import { backgroundColorPrimary, lightBrown2 } from "../styles/variables";
-import { device } from "../styles/mediaBreakpoints";
+import {
+  backgroundColorPrimary,
+  lightBrown2,
+} from "../../styles/variables.style";
+import { device } from "../../styles/mediaBreakpoints";
+
+export const DatePickerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  .react-datepicker__input-container {
+    position: unset;
+  }
+
+  @media ${device.xs} {
+    align-self: center;
+  }
+`;
 
 export const StyledDatePicker = styled(ReactDatePicker)`
   border-radius: 0.5rem;
@@ -13,9 +29,5 @@ export const StyledDatePicker = styled(ReactDatePicker)`
 
   &:focus {
     outline: none;
-  }
-
-  @media ${device.sm} {
-    padding: 0.4rem;
   }
 `;

@@ -1,9 +1,10 @@
 import { FC } from "react";
-import { Button } from "../../ui/Button";
-import { dateConverter } from "../../ui/dateConverter";
+import { Button } from "../../ui/Buttons/Button";
+import { dateConverter } from "../../ui/DateConverter/dateConverter";
 import { DiaryContainer, DiaryData } from "./Diary.style";
 import { useNavigate } from "react-router-dom";
 import { NavLinkButton } from "../../styles/App.style";
+import { DefinedRoutes } from "../../App";
 
 export interface DiaryDataInterface {
   diaryDate: string;
@@ -32,7 +33,7 @@ const OldDiaries: FC = () => {
           <Button
             className="medium"
             key={id}
-            onClick={() => navigate(`/diary/old/${id}`)}
+            onClick={() => navigate(`${DefinedRoutes.OldDiaries}/${id}`)}
           >
             {dateConverter(diaryDate).toString()}
           </Button>

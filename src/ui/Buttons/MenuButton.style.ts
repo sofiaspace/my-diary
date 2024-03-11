@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { backgroundColorPrimary } from "../styles/variables";
+import { backgroundColorPrimary } from "../../styles/variables.style";
 
 export const MenuButtonContainer = styled.div`
   padding: 1rem;

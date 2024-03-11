@@ -5,7 +5,7 @@ import {
   lightBrown,
   lightGrey2,
   lightGrey3,
-} from "../styles/variables";
+} from "../../styles/variables.style";
 
 export const ButtonContainer = styled.div`
   background-color: ${backgroundColorPrimary};

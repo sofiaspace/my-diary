@@ -1,12 +1,8 @@
 import { FC } from "react";
-import Header from "./Header";
+import { HeaderContainer } from "./HomePage.style";
 
 const HomePage: FC = () => {
-  return (
-    <div>
-      <Header />
-    </div>
-  );
+  return <HeaderContainer>My Diary</HeaderContainer>;
 };
 
 export default HomePage;

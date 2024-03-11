@@ -6,7 +6,7 @@ import {
   fontSizeSecondary,
   lightGrey2,
   lightGrey3,
-} from "../../styles/variables";
+} from "../../styles/variables.style";
 import { device } from "../../styles/mediaBreakpoints";
 
 export const AboutPageContainer = styled.div`

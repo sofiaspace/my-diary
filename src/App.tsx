@@ -15,6 +15,20 @@ import OldDiaries from "./components/diary/OldDiaries";
 import DiaryDetails from "./components/diary/DiaryDetails";
 import MobileNavBar from "./components/navBar/MobileNavBar";
 
+export enum DefinedRoutes {
+  AboutPage = "/about",
+  CalendarPage = "/calendar",
+  NewMeeting = "/calendar/new",
+  ScheduledMeetings = "/calendar/scheduled",
+  DiaryPage = "/diary",
+  NewDiary = "/diary/new",
+  OldDiaries = "/diary/old",
+  DiaryDetails = "/diary/old/:id",
+  TodoPage = "/todo",
+  ReviewsPage = "/reviews",
+  PageNotFound = "/*",
+}
+
 function App() {
   return (
     <BrowserRouter>
@@ -23,17 +37,20 @@ function App() {
       <StyledRoutes>
         <Routes>
           <Route index element={<HomePage />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path="calendar" element={<CalendarPage />} />
-          <Route path="calendar/new" element={<MeetingDetails />} />
-          <Route path="calendar/scheduled" element={<ScheduledMeetings />} />
-          <Route path="diary" element={<DiaryPage />} />
-          <Route path="diary/new" element={<NewDiary />} />
-          <Route path="diary/old" element={<OldDiaries />} />
-          <Route path="diary/old/:id" element={<DiaryDetails />} />
-          <Route path="todo" element={<TodoPage />} />
-          <Route path="reviews" element={<ReviewsPage />} />
-          <Route path="*" element={<PageNotFound />} />
+          <Route path={DefinedRoutes.AboutPage} element={<AboutPage />} />
+          <Route path={DefinedRoutes.CalendarPage} element={<CalendarPage />} />
+          <Route path={DefinedRoutes.NewMeeting} element={<MeetingDetails />} />
+          <Route
+            path={DefinedRoutes.ScheduledMeetings}
+            element={<ScheduledMeetings />}
+          />
+          <Route path={DefinedRoutes.DiaryPage} element={<DiaryPage />} />
+          <Route path={DefinedRoutes.NewDiary} element={<NewDiary />} />
+          <Route path={DefinedRoutes.OldDiaries} element={<OldDiaries />} />
+          <Route path={DefinedRoutes.DiaryDetails} element={<DiaryDetails />} />
+          <Route path={DefinedRoutes.TodoPage} element={<TodoPage />} />
+          <Route path={DefinedRoutes.ReviewsPage} element={<ReviewsPage />} />
+          <Route path={DefinedRoutes.PageNotFound} element={<PageNotFound />} />
         </Routes>
       </StyledRoutes>
     </BrowserRouter>

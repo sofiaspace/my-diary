@@ -1,9 +1,10 @@
 import { FC } from "react";
 import { MeetingContainer, MeetingDataForm } from "./Meetings.style";
-import { Button } from "../../ui/Button";
+import { Button } from "../../ui/Buttons/Button";
 import useDiaryContext from "../../hooks/useDiaryContext";
 import { useNavigate } from "react-router-dom";
-import DatePicker from "../../ui/DatePicker";
+import DatePicker from "../../ui/DatePicker/DatePicker";
+import { DefinedRoutes } from "../../App";
 
 const MeetingDetails: FC = () => {
   const { dispatch, state } = useDiaryContext();
@@ -15,7 +16,7 @@ const MeetingDetails: FC = () => {
     const formData = data ? JSON.parse(data) : [];
     localStorage.setItem("formData", JSON.stringify([...formData, state]));
     dispatch({ type: "submitData" });
-    navigate("/calendar/scheduled");
+    navigate(DefinedRoutes.ScheduledMeetings);
   };
 
   return (

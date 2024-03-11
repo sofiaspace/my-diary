@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef, useState } from "react";
-import MenuButton from "../../ui/MenuButton";
-import { routes } from "../../pages/HomePage/NavBar";
+import MenuButton from "../../ui/Buttons/MenuButton";
+import { navRoutes } from "../../pages/HomePage/NavBar";
 import {
   MobileList,
   MobileNavContainer,
@@ -29,7 +29,7 @@ const MobileNavBar: FC = () => {
 
       {isOpen === true && (
         <MobileList>
-          {routes.map((route, i) => (
+          {navRoutes.map((route, i) => (
             <MobileNavLink
               to={route.link}
               key={i}

@@ -1,9 +1,10 @@
 import { FC } from "react";
 import { DiaryContainer, DiaryHeader, StyledTextArea } from "./Diary.style";
 import useDiaryContext from "../../hooks/useDiaryContext";
-import DatePicker from "../../ui/DatePicker";
-import { Button } from "../../ui/Button";
+import DatePicker from "../../ui/DatePicker/DatePicker";
+import { Button } from "../../ui/Buttons/Button";
 import { useNavigate } from "react-router-dom";
+import { DefinedRoutes } from "../../App";
 
 const NewDiary: FC = () => {
   const { state, dispatch } = useDiaryContext();
@@ -19,24 +20,22 @@ const NewDiary: FC = () => {
       "diary",
       JSON.stringify([
         ...diaryData,
-        { diaryDate: state.diaryDate, diaryText: state.diaryText, id: id },
+        { diaryDate: state.diaryDate, diaryText: state.diaryText, id },
       ])
     );
     dispatch({ type: "submitData" });
-    navigate("/diary/old");
+    navigate(DefinedRoutes.OldDiaries);
   };
   return (
     <DiaryContainer>
       <DiaryHeader>
+        <span>Select date: </span>
         <DatePicker
           selected={state.diaryDate}
           onChange={(date: Date) =>
             dispatch({ type: "updateDiaryDate", payload: date })
           }
         />
-        <Button className="small" type="submit" onClick={handleSubmit}>
-          Create
-        </Button>
       </DiaryHeader>
       <StyledTextArea
         name="textarea"
@@ -45,9 +44,12 @@ const NewDiary: FC = () => {
           dispatch({ type: "updateDiaryText", payload: target.value })
         }
         rows={30}
-        placeholder="Add your story"
+        placeholder="Add your story here"
         required
       ></StyledTextArea>
+      <Button className="small" type="submit" onClick={handleSubmit}>
+        Create
+      </Button>
     </DiaryContainer>
   );
 };

@@ -6,7 +6,7 @@ import {
   lightGrey2,
   lightGrey3,
   white,
-} from "../../styles/variables";
+} from "../../styles/variables.style";
 import { device } from "../../styles/mediaBreakpoints";
 
 export const ReviewsPageContainer = styled.div`

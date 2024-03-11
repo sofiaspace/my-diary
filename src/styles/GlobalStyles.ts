@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { device } from "./mediaBreakpoints";
+import { darkGrey } from "./variables.style";
 
 const styled = { createGlobalStyle };
 export const GlobalStyles = styled.createGlobalStyle`
@@ -34,7 +35,7 @@ export const GlobalStyles = styled.createGlobalStyle`
 
   :root {
     overflow: hidden;
-    color: #303030;
+    color: ${darkGrey};
 
     display: flex;
     flex-direction: column;

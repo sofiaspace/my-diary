@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../styles/mediaBreakpoints";
 import { NavLink } from "react-router-dom";
-import { lightGrey3 } from "../../styles/variables";
+import { lightGrey3 } from "../../styles/variables.style";
 
 export const NavBarContainer = styled.nav`
   display: flex;

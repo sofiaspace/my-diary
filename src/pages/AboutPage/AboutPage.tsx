@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { AboutPageContainer, AboutPageText } from "./AboutPage.style";
 import { useNavigate } from "react-router-dom";
+import { DefinedRoutes } from "../../App";
 
 const AboutPage: FC = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const AboutPage: FC = () => {
           computer, so you don't have to worry that you will forget about
           something!
         </p>
-        <button onClick={() => navigate("/reviews")}>
+        <button onClick={() => navigate(DefinedRoutes.ReviewsPage)}>
           See our reviews <span>&rarr;</span>
         </button>
       </AboutPageText>

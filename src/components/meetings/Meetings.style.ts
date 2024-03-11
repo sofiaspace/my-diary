@@ -7,7 +7,7 @@ import {
   fontSizeSecondary,
   lightGrey2,
   lightGrey3,
-} from "../../styles/variables";
+} from "../../styles/variables.style";
 
 export const MeetingContainer = styled.div`
   background-color: ${backgroundColorPrimary};
@@ -48,6 +48,16 @@ export const MeetingDataForm = styled.form`
   grid-template-columns: 6rem 2fr;
   align-items: baseline;
 
+  @media ${device.md} {
+    grid-template-columns: 5.7rem 2fr;
+  }
+  @media ${device.xs} {
+    display: flex;
+    flex-direction: column;
+    align-items: unset;
+    margin-bottom: 0.5rem;
+  }
+
   input {
     border: none;
     background-color: inherit;
@@ -56,8 +66,8 @@ export const MeetingDataForm = styled.form`
     font-size: 1rem;
     background-clip: text;
 
-    @media ${device.xs} {
-      max-width: 75%;
+    @media ${device.sm} {
+      max-width: 100%;
     }
 
     &:focus {

@@ -6,7 +6,8 @@ import {
   lightGrey1,
   lightGrey2,
   lightGrey3,
-} from "../../styles/variables";
+} from "../../styles/variables.style";
+import { device } from "../../styles/mediaBreakpoints";
 
 export const TodoPageContainer = styled.div`
   height: 60%;
@@ -63,5 +64,13 @@ export const Input = styled.input`
   &:focus::placeholder {
     padding-left: 0.3rem;
     background: transparent;
+  }
+
+  @media ${device.md} {
+    width: 80%;
+  }
+
+  @media ${device.md} {
+    width: 90%;
   }
 `;

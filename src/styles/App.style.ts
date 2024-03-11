@@ -5,7 +5,7 @@ import {
   backgroundColorSecondary,
   borderRadiusPrimary,
   fontSizeSecondary,
-} from "./variables";
+} from "./variables.style";
 import { device } from "./mediaBreakpoints";
 
 export const StyledRoutes = styled.div`
